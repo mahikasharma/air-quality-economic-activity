@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality vs. Economic Activity in the U.S.</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <h1>Air Quality vs. Economic Activity in the U.S.</h1>
+
+    <h3>Overall Introduction</h3>
+
+    <p>As industrialization and urbanization accelerates across the world, air pollution has become a cause
+        of concern for many. Nations like India, Bangladesh, and Chad face the worst air quality indexes,
+        and their citizens face the dire consequences on a daily basis. However, this air pollution is often
+        the result of massive economic turnover — new industries bringing jobs and wealth to otherwise
+        low-income populations. To explore this tradeoff in the United States, a key question arises:
+        <strong>Is there a tradeoff between economic activity and air quality?</strong>
+    </p>
+
+    <p>Our initial research revealed key insights that shaped our thesis. A study from the National Library
+        of Medicine discusses the medical effects of pollution while identifying major contributors, primarily
+        various industries including utilities (gas, electric, water), transportation, and agriculture.
+        A separate paper from Harvard specifically focuses on coal-fired power plants and their outsized
+        contribution to worsening air quality across the country.
+    </p>
+
+    <p>To learn more about the relationship between industrial activity and air quality, visit the
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6778223/">National Library of Medicine</a> or
+        read <a href="https://news.harvard.edu/gazette/story/2023/11/harvards-legacy-of-heading-off-deaths-from-industrial-air-pollution/">Harvard's research on industrial air pollution</a>.
+    </p>
+
+    <h3>Introduction to the Data</h3>
+
+    <p>Our analysis draws on data from the <strong>U.S. Energy Information Administration (EIA)</strong>,
+        which tracks state-level energy consumption, production, and emissions across the United States.
+        [NEED TO ADD: : dataset size. number of rows and columns after cleaning, year range covered, and any notable
+        preprocessing steps like filtering states or merging datasets. Also note what information may be
+        missing, e.g. localized county-level data, certain pollutant types, etc.]
+    </p>
+
+    <div class="center">
+        <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0lax">Variable Name</th>
+                <th class="tg-0lax">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">[State / Region]</td>
+                <td class="tg-0lax">[U.S. state or geographic region]</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">[AQI]</td>
+                <td class="tg-0lax">[Air Quality Index — measure of how polluted the air is]</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">[Energy Consumption]</td>
+                <td class="tg-0lax">[Total energy consumed, in trillion BTUs or equivalent]</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">[CO2 Emissions]</td>
+                <td class="tg-0lax">[Carbon dioxide emissions in million metric tons]</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">[Industry Sector]</td>
+                <td class="tg-0lax">[Sector responsible for emissions, e.g. utilities, transportation]</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+
+  
+    <h3>Air Quality Across the United States</h3>
+
+    <p>The map below provides a geographic overview of air quality index (AQI) values across U.S. states.
+        Hover over any state to see its name, AQI value, and other relevant metrics. Darker shading
+        indicates worse air quality.
+    </p>
+
+    <div class="center">
+        <iframe src="map.html" width="80%" height="400px" frameborder="0"></iframe>
+    </div>
+
+    <p>[NEED TO ADD: Which states or regions have the worst/best AQI? Are there geographic patterns, 
+        industrial midwest vs. less industrialized state. outliers.]
+    </p>
+
+
+    <h3>AQI Trends Over Time</h3>
+
+    <div class="container">
+        <div class="image">
+            <iframe src="line.html" width="100%" height="400px" frameborder="0"></iframe>
+        </div>
+        <div class="text">
+            <p>This line plot tracks changes in air quality over time across the U.S. Marked points indicate
+                the years with the highest and lowest recorded AQI values — hover over them to see the
+                exact figures. [NEED TO ADD TAKEAWAY: What does the trend reveal? Has air quality improved or
+                worsened over the years, and does it correlate with shifts in industrial output?]
+            </p>
+        </div>
+    </div>
+
+    <h3>Energy Consumption vs. Air Quality by State</h3>
+
+    <p>The scatter plot below examines the relationship between state-level energy consumption and air
+        quality index. Each point represents a U.S. state. [ADD: describe any color encoding, axes labels,
+        or interactive features once the viz is finalized.]
+    </p>
+
+    <div class="center">
+        <iframe src="scatter.html" width="85%" height="550px" frameborder="0"></iframe>
+    </div>
+
+    <p>[NEED TO ADD TAKEAWAY: Is there a visible correlation between higher energy consumption and worse AQI?
+        Are there states that consume a lot of energy but still maintain decent air quality, or vice versa?]
+    </p>
+
+    <h3>AQI Distribution by Industry Sector</h3>
+
+    <div class="container">
+        <div class="text">
+            <p>This side-by-side boxplot compares the distribution of AQI values across different industry
+                sectors, such as utilities, transportation, and agriculture. Hover over any box to see the
+                median, interquartile range, and outliers for that sector.
+            </p>
+            <p>[NEED TO ADD TAKEAWAY: Which sectors show the most variability in air quality impact? Are certain
+                industries consistently associated with worse AQI values across states?]
+            </p>
+        </div>
+        <div class="image">
+            <iframe src="boxplot.html" width="100%" height="500px" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <h3>CO2 Emissions by State</h3>
+
+    <p>The bar graph below compares CO2 emissions across U.S. states, giving a sense of which states
+        are the largest contributors to air pollution from an emissions standpoint. [NEED TO ADD: describe
+        interactions or filtering options once we finalize.]
+    </p>
+
+    <div class="center">
+        <iframe src="summary.html" width="95%" height="300px" frameborder="0"></iframe>
+    </div>
+
+    <p>[NEED TO ADD TAKEAWAY: Which states emit the most CO2? Do high-emission states also tend to have worse
+        AQI, or does regulation and geography complicate that relationship?]
+    </p>
+
+    <h3>Summary and Future Work</h3>
+
+    <p>[NEED TO ADD SUMMARY: Summarize 2-3 concrete conclusions from your visualizations. ex. do states
+        with higher energy consumption tend to have worse air quality, which sectors are the biggest
+        culprits, is there evidence of a tradeoff between economic output and clean air in the U.S.]
+    </p>
+
+    <p>This analysis is limited to state-level aggregates from the EIA, which may obscure finer-grained
+        patterns at the county or city level. Additionally, AQI is influenced by geographic and
+        meteorological factors beyond industrial activity alone. Future work could incorporate population
+        density, GDP by sector, or longitudinal health outcome data to build a more complete picture of
+        how economic activity shapes the air Americans breathe.
+    </p>
+
+    <p>If you are have any further questions about this project, please contact us at:
+        Mahika Sharma (<a href="mailto:sharma.mahik@northeastern.edu">sharma.mahik@northeastern.edu</a>),
+        Kiswa Khan (<a href="mailto:khan.ki@northeastern.edu">khan.ki@northeastern.edu</a>),
+        Neha Maan (<a href="mailto:maan.n@northeastern.edu">maan.n@northeastern.edu</a>)
+    </p>
+
+</body>
+</html>
