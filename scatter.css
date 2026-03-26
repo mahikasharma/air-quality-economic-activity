@@ -1,0 +1,170 @@
+/* scatter.css
+   Styles for the D3 scatter plot component.
+   Add this <link> to your GitHub Pages HTML head:
+     <link rel="stylesheet" href="scatter.css">
+*/
+
+/* ── Controls row ───────────────────────────────────────────────────────── */
+.scatter-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.scatter-legend-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b6560;
+  margin-right: 2px;
+}
+
+.scatter-legend-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px 4px 9px;
+  border-radius: 20px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #1a1714;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+  user-select: none;
+}
+
+.scatter-legend-btn:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.scatter-legend-btn--active {
+  border-color: rgba(0,0,0,0.18);
+  background: rgba(0,0,0,0.02);
+}
+
+.scatter-legend-btn--dimmed {
+  opacity: 0.38;
+  border-color: transparent;
+}
+
+.scatter-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.scatter-reset-btn {
+  margin-left: auto;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1.5px solid #d0ccc6;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: #6b6560;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.scatter-reset-btn:hover {
+  border-color: #1a1714;
+  color: #1a1714;
+}
+
+/* ── Chart internals ────────────────────────────────────────────────────── */
+.scatter-grid line {
+  stroke: #e0dbd2;
+  stroke-dasharray: 3 4;
+}
+
+.scatter-grid path { display: none; }
+
+.scatter-axis text {
+  font-size: 11px;
+  fill: #6b6560;
+}
+
+.scatter-axis line,
+.scatter-axis path {
+  stroke: #e0dbd2;
+}
+
+.scatter-axis-label {
+  font-size: 12px;
+  fill: #6b6560;
+}
+
+.scatter-state-text {
+  font-size: 10px;
+  font-weight: 500;
+  fill: #6b6560;
+  pointer-events: none;
+}
+
+/* ── Brush info bar ─────────────────────────────────────────────────────── */
+.scatter-brush-info {
+  margin-top: 10px;
+  min-height: 20px;
+  font-size: 0.78rem;
+  color: #6b6560;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.scatter-brush-info strong {
+  color: #1a1714;
+  font-weight: 600;
+}
+
+/* ── Floating tooltip ───────────────────────────────────────────────────── */
+#scatter-tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: #ffffff;
+  border: 1px solid #e0dbd2;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+  opacity: 0;
+  transition: opacity 0.12s;
+  min-width: 190px;
+  z-index: 9999;
+}
+
+#scatter-tooltip.visible {
+  opacity: 1;
+}
+
+.stt-state {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #1a1714;
+}
+
+.stt-region {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.stt-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 3px;
+  color: #1a1714;
+}
+
+.stt-k { color: #6b6560; }
+
+.stt-v { font-weight: 500; }
